@@ -47,7 +47,7 @@ function App(): JSX.Element {
 
   const buttonStyle = {
     padding: "10px 20px",
-    backgroundColor: "#1976d2", // MUI Primary Color (Blue)
+    backgroundColor: "#1976d2",
     color: "white",
     border: "none",
     borderRadius: "5px",
@@ -74,7 +74,7 @@ function App(): JSX.Element {
   };
 
   const doneButtonStyle = {
-    backgroundColor: "#d32f2f", // MUI Error Color (Red)
+    backgroundColor: "#d32f2f",
     color: "white",
     border: "none",
     borderRadius: "5px",
@@ -146,7 +146,7 @@ const taskReducer = (tasks: Task[], action: Action): Task[] => {
       ];
     }
     case "deleted": {
-      return tasks.filter((t: Task) => t.id !== action.id);
+      return tasks.filter((t: Task): boolean => t.id !== action.id);
     }
     default: {
       throw new Error("Unknown action");
